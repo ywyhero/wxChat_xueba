@@ -240,23 +240,14 @@ Page({
         count: 160
       }
     ],
-    top: 0
+    top: 0,
+    timer: null
   },
   onLoad() {
-  },
-  onShow() {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          viewHeight: res.windowHeight
-        })
-      }
-    });
     let ulHeight = 1056 * 2;
     let top = 0;
-    let timer = null;
     let self = this
-    timer = setInterval(scroll, 20);
+    this.data.timer = setInterval(scroll, 20);
     function scroll () {
       if(top >= -(ulHeight)){
         top -= 1;
@@ -270,6 +261,19 @@ Page({
         })
       }
     }
+  },
+  onShow() {
+    this.setData({
+      timer: null
+    })
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          viewHeight: res.windowHeight
+        })
+      }
+    });
+    
 
   },
   getPhoneNumber(e){

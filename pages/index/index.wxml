@@ -1,0 +1,270 @@
+<!--index.wxml-->
+<view class="main-page">
+  <view class="register">
+    <view class="register-header">
+      <view class="register-header-left">
+        <image class="register-header-left-icon" src="http://www.xuebacoming.com/application/images/sourceRegister/sourcelogo.png"></image>
+        <span>提分就来</span>
+        <span>学霸1对1</span>
+        <span>小学、初中、</span>
+        <span>高中全科辅导</span>
+      </view>
+      <view class="register-header-right">
+        <image class="register-header-right-icon" src="http://www.xuebacoming.com/application/images/sourceRegister/banner3.png"></image>
+      </view>
+    </view>
+    <view class="register-main">
+      <view class="register-main-title">
+        <span>免费领取</span>
+        <span>299</span>
+        <image src="http://www.xuebacoming.com/application/images/sourceRegister/my.png" />
+        <span>名师测评课</span>
+      </view>
+      <view class="register-main-content">
+        <view class="register-main-content-name">
+          <input bindinput="getUserName" value="{{username}}" type="text" placeholder="请输入您的姓名" class="register-main-content-name-input"
+          />
+        </view>
+        <view class="register-main-content-selects">
+          <view class="register-main-content-select">
+            <picker range-key="value" bindchange="bindPickerChange" value="{{index}}" range="{{classes}}">
+              <view class="picker">
+                {{classes[index].value}}
+              </view>
+              <image class="register-main-content-select-img" src="./../../assets/jt.png"></image>
+            </picker>
+          </view>
+          <view class="register-main-content-select">
+            <picker range-key="value" bindchange="bindPickerSubjectChange" value="{{subject}}" range="{{subjects}}">
+              <view class="picker">
+                {{subjects[subject].value}}
+              </view>
+              <image class="register-main-content-select-img" src="./../../assets/jt.png"></image>
+            </picker>
+          </view>
+        </view>
+        <view class="register-main-content-phone">
+          <input value="{{phoneNumber}}" bindinput="getPhoneNumber" type="text" placeholder="手机号码" class="register-main-content-phone-input"
+          />
+        </view>
+        <view class="register-main-content-btn" bindtap="register">免费领取</view>
+      </view>
+    </view>
+  </view>
+  <view class="activity">
+    <image class="activity-img" src="http://www.xuebacoming.com/application/images/sourceRegister/wuyi.png"></image>
+  </view>
+  <view class="teacher-lists">
+    <view class="teacher-list">
+      <span class="teacher-list-number">20,098</span>
+      <span class="teacher-list-val">名校精英教师</span>
+    </view>
+    <view class="teacher-list">
+      <span class="teacher-list-number">942,800</span>
+      <span class="teacher-list-val">累计注册学员</span>
+    </view>
+    <view class="teacher-list">
+      <span class="teacher-list-number">98,570</span>
+      <span class="teacher-list-val">帮助学员提分</span>
+    </view>
+  </view>
+  <view class="all-teachers">
+    <view class="all-teachers-title">
+      <span class="all-teachers-val">严选全国名校师资</span>
+      <span class="all-teachers-count">2000+</span>
+    </view>
+    <view class="all-teachers-lists">
+      <view class="all-teachers-list">
+        <view class="all-teachers-list-head">
+          <image class="all-teachers-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/kc03.png"></image>
+          <image class="all-teachers-list-bg" src="http://www.xuebacoming.com/application/images/sourceRegister/forbg.png"></image>
+        </view>
+        <span class="all-teachers-list-name">曾海阳</span>
+        <span>上海交大硕士</span>
+        <span>英语自主招生</span>
+        <span>课程设计讲师</span>
+      </view>
+      <view class="all-teachers-list">
+        <view class="all-teachers-list-head">
+          <image class="all-teachers-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/kc04.png"></image>
+          <image class="all-teachers-list-bg" src="http://www.xuebacoming.com/application/images/sourceRegister/forbg.png"></image>
+        </view>
+        <span class="all-teachers-list-name">罗帅</span>
+        <span>清华大学硕士</span>
+        <span>k12在线教育</span>
+        <span>资深专家</span>
+      </view>
+      <view class="all-teachers-list">
+        <view class="all-teachers-list-head">
+          <image class="all-teachers-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/kc_05.png"></image>
+          <image class="all-teachers-list-bg" src="http://www.xuebacoming.com/application/images/sourceRegister/forbg.png"></image>
+        </view>
+        <span class="all-teachers-list-name">秦玉婷</span>
+        <span>湖南师范大学</span>
+        <span>年度最受学生</span>
+        <span>欢迎的老师</span>
+      </view>
+      <view class="all-teachers-list">
+        <view class="all-teachers-list-head">
+          <image class="all-teachers-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/kc06.png"></image>
+          <image class="all-teachers-list-bg" src="http://www.xuebacoming.com/application/images/sourceRegister/forbg.png"></image>
+        </view>
+        <span class="all-teachers-list-name">王珊珊</span>
+        <span>复旦大学硕士</span>
+        <span>应试教育</span>
+        <span>资深教研教师</span>
+      </view>
+    </view>
+  </view>
+  <view class="four-con">
+    <view class="four-con-top">
+      <view class="four-con-top-left">
+        <span>好老师 更懂你</span>
+        <span>为你量身定制学习计划</span>
+      </view>
+      <view class="four-con-top-right">
+        <span>好老师 懂考点</span>
+        <span>全科名师在线缺哪补哪</span>
+      </view>
+    </view>
+    <view class="four-con-bottom">
+      <view class="four-con-bottom-left">
+        <span>好老师 高能力</span>
+        <span>清北复交名校精英任教</span>
+      </view>
+      <view class="four-con-bottom-right">
+        <span class="free-get" bindtap="toTop">免费领取>></span>
+      </view>
+    </view>
+  </view>
+  <view class="three-step">
+    <image class="three-step-img" src="./../../assets/tp.png"></image>
+    <view class="three-step-lists">
+      <view class="three-step-list">
+        <span class="three-step-list-val">01</span>
+        <span class="three-step-list-text">填写信息</span>
+        <span class="three-step-list-text">领免费测评课</span>
+      </view>
+      <image class="three-step-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/rightArrow.png"></image>
+      <view class="three-step-list">
+        <span class="three-step-list-val">02</span>
+        <span class="three-step-list-text">专业顾问</span>
+        <span class="three-step-list-text">在线为您排课</span>
+      </view>
+      <image class="three-step-list-img" src="http://www.xuebacoming.com/application/images/sourceRegister/rightArrow.png"></image>
+      <view class="three-step-list">
+        <span class="three-step-list-val">03</span>
+        <span class="three-step-list-text">打开客户端</span>
+        <span class="three-step-list-text">在家当学霸</span>
+      </view>
+    </view>
+  </view>
+  <view class="title-common">
+    <span>专业线上课程</span>
+    <span>提分快人一步</span>
+  </view>
+  <view class="video-mask">
+    <video objectFit="fill" src="http://video.xuebacoming.com/cfeacfdbdedd4f0f8d15b4a75c7c7c18/376ccd28026a4079ae824a477a981752-63dab09039f9de9c56eb48cfdefda064-ld.mp4">
+    </video>
+  </view>
+  <view class="four-con">
+    <view class="four-con-top">
+      <view class="four-con-top-left four-con-list">
+        <image class="four-con-img" src="http://www.xuebacoming.com/application/images/sourceRegister/tb02.png"></image>
+        <view class="four-con-item">
+          <span>随时上课</span>
+          <span>节省时间</span>
+        </view>
+
+      </view>
+      <view class="four-con-top-right four-con-list">
+        <image class="four-con-img" src="http://www.xuebacoming.com/application/images/sourceRegister/tb02.png"></image>
+        <view class="four-con-item">
+          <span>在家学习</span>
+          <span>安全放心</span>
+        </view>
+      </view>
+    </view>
+    <view class="four-con-bottom">
+      <view class="four-con-bottom-left four-con-list">
+        <image class="four-con-img" src="http://www.xuebacoming.com/application/images/sourceRegister/tb02.png"></image>
+        <view class="four-con-item">
+          <span>课程录制</span>
+          <span>及时复习</span>
+        </view>
+      </view>
+      <view class="four-con-bottom-right">
+        <span class="free-get" bindtap="toTop">免费领取>></span>
+      </view>
+    </view>
+  </view>
+  <view class="pc-pad">
+    <view class="pc-pad-val">
+      <p>电脑、平板、ipad</p>
+      <p>手机均可上课</p>
+    </view>
+    <image class="pc-pad-img" src="http://www.xuebacoming.com/application/images/sourceRegister/sk.png"></image>
+  </view>
+  <view class="rise-result">
+    <image class="rise-result-img" src="./../../assets/pic.png"></image>
+    <view class="rise-result-main">
+      <view class="rise-result-title">
+        <span class="rise-result-title-top">用提分效果说话</span>
+        <span class="rise-result-title-des">最高全科提分109分，平均提分27.2分</span>
+      </view>
+      <view class="stu-lists">
+        <view class="stu-lists-title">
+          <span>优秀学员</span>
+          <span>战绩</span>
+          <span>购买课时</span>
+        </view>
+        <view class="stu-lists-main">
+          <view class="stu-lists-main-ul" style="top: {{top}}rpx">
+            <view class="stu-lists-main-li" wx:for="{{lists}}" wx:key="index">
+              <span>{{item.username}}</span>
+              <span class="stu-lists-main-li-strong">{{item.subject}}
+                <span class="stu-lists-main-li-blue">{{item.score}}</span>
+              </span>
+              <span>{{item.count}}</span>
+            </view>
+            <view class="stu-lists-main-li" wx:for="{{lists}}" wx:key="index">
+              <span>{{item.username}}</span>
+              <span class="stu-lists-main-li-strong">{{item.subject}}
+                <span class="stu-lists-main-li-blue">{{item.score}}</span>
+              </span>
+              <span>{{item.count}}</span>
+            </view>
+          </view>
+        </view>
+        <view class="stu-lists-btn" bindtap="toTop">免费领取</view>
+      </view>
+    </view>
+  </view>
+  <view class="parents-say">
+    <view class="parents-say-title">用家长口碑代言</view>
+    <view class="parents-say-main">
+      <image class="parents-say-main-img" src="./../../assets/iphone.png"></image>
+      <view class="parents-say-main-lists">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="stu-lists-btn parents-say-btn" bindtap="toTop">免费领取</view>
+    </view>
+  </view>
+  <view class="media-report">
+    <span class="media-report-title">媒体争相报道</span>
+    <image class="media-report-img" src="http://www.xuebacoming.com/application/images/sourceRegister/gg.png"></image>
+  </view>
+  <view class="footer">
+    <span class="footer-val">©Copyright 上海叉子信息科技有限公司（沪ICP备15049274号-1）</span>
+    <view class="footer-img">
+      <image src="http://www.xuebacoming.com/application/images/sourceRegister/logo.png"></image>
+      <image src="http://www.xuebacoming.com/application/images/sourceRegister/lvb.png"></image>
+    </view>
+  </view>
+</view>

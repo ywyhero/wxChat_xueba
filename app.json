@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F5B800",
+    "navigationBarTitleText": "学霸1对1",
+    "navigationBarTextStyle":"#fff"
+  }
+}

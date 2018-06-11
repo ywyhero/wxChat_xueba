@@ -304,18 +304,82 @@ Page({
     })
   },
   register(){
+    if(!this.data.username){
+      wx.showToast({
+        title: '用户名不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if(this.data.username.length < 2){
+      wx.showToast({
+        title: '用户名长度不能低于两位',
+        icon: 'none'
+      })
+      return
+    }
+    if(!this.data.phoneNumber) {
+      wx.showToast({
+        title: '手机号码不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if(!this.data.classId) {
+      wx.showToast({
+        title: '请选择年级',
+        icon: 'none'
+      })
+      return
+    }
+    if(!this.data.subjectId) {
+      wx.showToast({
+        title: '请选择科目',
+        icon: 'none'
+      })
+      return
+    }
     wx.request({
-      url: 'http://www.xuebacmoing.com/reg/reg_register',
+      url: 'https://www.xuebacoming.com/reg/reg_register',
       method: 'POST',
+      header:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
       data: {
         mobile: this.data.phoneNumber,
-        name:  this.data.username,
-        type:972,
+        name: this.data.username,
+        type: 972,
         grade: this.data.classId,
         subject: this.data.subjectId
       },
       success: (data) => {
-        console.log(data)
+        let res = data.data;
+        if(res.code === 0) {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success'
+          })
+        } else if(res.code === -1){
+          wx.showToast({
+            title: '注册失败',
+            icon: 'none'
+          })
+        } else if(res.code === 1001){
+          wx.showToast({
+            title: '手机号码重复',
+            icon: 'none'
+          })
+        } else if(res.code === 1002){
+          wx.showToast({
+            title: '手机号码不正确',
+            icon: 'none'
+          })
+        } else if(res.code === 1003){
+          wx.showToast({
+            title: '用户名长度不能低于两位',
+            icon: 'none'
+          })
+        }
       }
     })
   }

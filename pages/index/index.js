@@ -281,7 +281,7 @@ Page({
     }
     return {
       title: '名师面对面，轻松当学霸！',
-      path: '/page/index/index',
+      path: '/pages/index/index',
       imageUrl: './../../assets/share.png'
     }
   },

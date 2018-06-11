@@ -44,7 +44,7 @@
           </view>
         </view>
         <view class="register-main-content-phone">
-          <input value="{{phoneNumber}}" bindinput="getPhoneNumber" type="text" placeholder="手机号码" class="register-main-content-phone-input"
+          <input value="{{phoneNumber}}" bindinput="getPhoneNumber" maxlength="11" type="number" placeholder="手机号码" class="register-main-content-phone-input"
           />
         </view>
         <view class="register-main-content-btn" bindtap="register">免费领取</view>

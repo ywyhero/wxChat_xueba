@@ -280,7 +280,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '学霸1对1在线辅导',
+      title: '名师面对面，轻松当学霸！',
       path: '/page/index/index',
       imageUrl: './../../assets/share.png'
     }

@@ -52,7 +52,7 @@
     </view>
   </view>
   <view class="activity">
-    <image class="activity-img" src="http://www.xuebacoming.com/application/images/sourceRegister/wuyi.png"></image>
+    <image class="activity-img" src="./../../assets/active.png"></image>
   </view>
   <view class="teacher-lists">
     <view class="teacher-list">
